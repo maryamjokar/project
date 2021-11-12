@@ -56,4 +56,5 @@ while player1_wins < winning_score and player2_wins < winning_score:
     else:
         print("something went wrong ....")
 
-        
+
+print(f"Final Scores: player 1 : {player1_wins} | player 2 : {player2_wins}")
