@@ -21,7 +21,14 @@ def delete_task():
         tkinter.messagebox.showwarning(title="warning" , message="You must select a task.")
 
 def load_tasks():
-    pass
+    try:
+        tasks = pickle.load(open("task.dat" , "rb"))
+        Listbox_tasks.delete(0, tkinter.END)
+        for task in tasks:
+            Listbox_tasks.insert(tkinter.END, task)
+    except:
+            tkinter.messagebox.showwarning(title="warning" , message="Cannot finf tasks.dat")
+
 
 def save_task():
     tasks = Listbox_tasks.get(0, Listbox_tasks.size())
