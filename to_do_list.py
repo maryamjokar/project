@@ -1,6 +1,6 @@
 import tkinter
-from tkinter.constants import COMMAND
 import tkinter.messagebox
+import pickle
 
 root = tkinter.Tk()
 root.title("to do list")
@@ -24,7 +24,8 @@ def load_tasks():
     pass
 
 def save_task():
-    pass
+    tasks = Listbox_tasks.get(0, Listbox_tasks.size())
+    pickle.dump(tasks, open("tasks.dat" , "wb"))
 
 #create GUI
 frame_tasks = tkinter.Frame(root)
